@@ -8,10 +8,15 @@ const mensaje = document.querySelector('.mensaje')
 // La letra "u" es convertida para "ufat"
 
 function btnEncriptar() {
-    const textoEncriptar = encriptar(textArea.value)
-    mensaje.value = textoEncriptar
-    textArea.value = "";
-    mensaje.style.backgroundImage= "none";
+    if(textArea.value == ''){
+        textArea.value = 'escribe algo aqui'
+    } else{
+        const textoEncriptar = encriptar(textArea.value)
+        mensaje.value = textoEncriptar
+        textArea.value = "";
+        mensaje.style.backgroundImage= "none";
+    }
+   
 }
 
 function encriptar(StringEncriptar){
@@ -32,9 +37,14 @@ function encriptar(StringEncriptar){
 }
 
 function btnDesEncriptar() {
-    const textoEncriptar = desencriptar(textArea.value)
-    mensaje.value = textoEncriptar
-    textArea.value = "";
+    
+    if(textArea.value == ''){
+        textArea.value = 'escribe algo aqui'
+    } else{
+        const textoEncriptar = desencriptar(textArea.value)
+        mensaje.value = textoEncriptar
+        textArea.value = "";
+    }
 }
 
 
@@ -54,3 +64,4 @@ function desencriptar(StringDesEncriptar){
     return StringDesEncriptar
 
 }
+
